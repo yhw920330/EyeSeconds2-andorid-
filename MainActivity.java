@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -20,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
         EditText userID = (EditText) findViewById(R.id.user_id);
         EditText userPW = (EditText) findViewById(R.id.user_pw);
         Button btnLogin = (Button) findViewById(R.id.btn_login);
+
+        FirebaseMessaging.getInstance().subscribeToTopic("news");
+        FirebaseInstanceId.getInstance().getToken();
 
     }
 
